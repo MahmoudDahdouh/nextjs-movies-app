@@ -11,7 +11,7 @@ import BottomNavItem from './BottomNavItem'
 
 const BottomNav = () => {
   return (
-    <nav className='flex md:hidden min-h-fit bg-emerald-950 bottom-0 sticky z-50'>
+    <nav className='flex md:hidden min-h-fit bg-emerald-950 bottom-0 sticky z-50 drop-shadow-[0_-4px_8px_rgba(0,0,0,0.4)]'>
       <div className='container flex gap-4 justify-between items-center h-full py-2'>
         <BottomNavItem
           href='/'
