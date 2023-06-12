@@ -1,4 +1,8 @@
+import Footer from '@/components/Footer'
+import BottomNav from '../components/nav/BottomNav'
+import Navbar from '../components/nav/Navbar'
 import './globals.css'
+import 'swiper/css'
 
 export const metadata = {
   title: 'Movie App',
@@ -12,11 +16,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <head>
-        <link rel="icon" href="/logo.svg" />
+        <link rel='icon' href='/logo.svg' />
       </head>
-      <body>{children}</body>
+      <body className='min-h-screen flex flex-col'>
+        <Navbar />
+        <main className='flex-1 pb-12'>{children}</main>
+        <Footer />
+        <BottomNav />
+      </body>
     </html>
   )
 }
