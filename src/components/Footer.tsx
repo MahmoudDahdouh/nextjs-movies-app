@@ -11,6 +11,7 @@ import {
   FaTwitter,
   FaTwitterSquare,
 } from 'react-icons/fa'
+import TMDBLogo from '../../public/TMDBLogo'
 
 const Footer = () => {
   return (
@@ -83,8 +84,8 @@ const Footer = () => {
                   y1='116.5'
                   y2='160.5'
                 >
-                  <stop stop-color='white'></stop>
-                  <stop offset='1' stop-color='white' stop-opacity='0'></stop>
+                  <stop stopColor='white'></stop>
+                  <stop offset='1' stopColor='white' stopOpacity='0'></stop>
                 </linearGradient>
                 <linearGradient
                   gradientUnits='userSpaceOnUse'
@@ -94,8 +95,8 @@ const Footer = () => {
                   y1='54'
                   y2='106.875'
                 >
-                  <stop stop-color='white'></stop>
-                  <stop offset='1' stop-color='white' stop-opacity='0'></stop>
+                  <stop stopColor='white'></stop>
+                  <stop offset='1' stopColor='white' stopOpacity='0'></stop>
                 </linearGradient>
               </defs>
             </svg>
@@ -105,12 +106,7 @@ const Footer = () => {
           <p className='text-white text-base'>Data provided by:</p>
           <a href='https://www.themoviedb.org/' target='_blank'>
             <div className='h-20 w-20 flex items-center'>
-              <Image
-                src='/tmdb-logo.svg'
-                alt='The Movie Database'
-                width={100}
-                height={100}
-              />
+              <TMDBLogo />
             </div>
           </a>
         </div>
