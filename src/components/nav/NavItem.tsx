@@ -12,7 +12,7 @@ const NavItem = ({ href, title, icon, active }: NavItemProps) => {
     <li>
       <Link
         href={href}
-        className={`flex gap-4 justify-between items-center p-4 py-2 hover:bg-emerald-900 rounded-lg transition-all
+        className={`flex gap-4 justify-between items-center p-4 py-2 hover:bg-emerald-900/40 rounded-lg transition-all
         ${active ? 'bg-emerald-900 font-black' : ''}
         `}
       >
