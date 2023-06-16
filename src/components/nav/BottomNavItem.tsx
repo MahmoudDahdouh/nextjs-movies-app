@@ -19,7 +19,7 @@ const BottomNavItem = ({
   return (
     <Link
       href={href}
-      className={`flex flex-col flex-1 items-center justify-between gap-1 text-white text-center hover:bg-emerald-900 transition-all rounded-lg p-1
+      className={`flex flex-col flex-1 items-center justify-between gap-1 text-white text-center hover:bg-emerald-900/40 transition-all rounded-lg p-1
       ${active ? 'bg-emerald-900 font-black' : ''}
       `}
     >
