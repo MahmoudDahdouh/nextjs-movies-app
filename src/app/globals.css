@@ -20,6 +20,18 @@
       rgba(2, 44, 34, 1) 100%
     );
   }
+  .max-lines-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .max-lines-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
 .gradient-cover {
   @apply film-cover-gradient lg:lg-film-cover-gradient;
