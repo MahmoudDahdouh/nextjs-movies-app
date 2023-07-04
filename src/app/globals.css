@@ -20,6 +20,12 @@
       rgba(2, 44, 34, 1) 100%
     );
   }
+  .max-lines-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
   .max-lines-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
