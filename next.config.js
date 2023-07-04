@@ -1,17 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // add tmdb image url to next image loader domains
-
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'image.tmdb.org',
-        port: '',
-        pathname: '/t/p/w500/**',
-      },
-    ],
-  },
+  reactStrictMode: false,
+  images: { domains: ['image.tmdb.org'] },
 }
 
 module.exports = nextConfig
