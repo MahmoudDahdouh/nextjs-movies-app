@@ -1,31 +1,21 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import MovieItem from '../Movies/MovieItem'
-import Link from 'next/link'
 import TvShowItem from './TvShowItem'
-
-const TvShowsSlider = () => {
+interface SliderProps {
+  tvShows: TvShow[]
+}
+const TvShowsSlider = ({ tvShows }: SliderProps) => {
   return (
     <Swiper
       className='slider-width-auto slides-start'
       slidesPerView={'auto'}
       spaceBetween={16}
     >
-      <SwiperSlide style={{ maxWidth: '18rem' }}>
-        <TvShowItem />
-      </SwiperSlide>
-      <SwiperSlide style={{ maxWidth: '18rem' }}>
-        <TvShowItem />
-      </SwiperSlide>
-      <SwiperSlide style={{ maxWidth: '18rem' }}>
-        <TvShowItem />
-      </SwiperSlide>
-      <SwiperSlide style={{ maxWidth: '18rem' }}>
-        <TvShowItem />
-      </SwiperSlide>
-      <SwiperSlide style={{ maxWidth: '18rem' }}>
-        <TvShowItem />
-      </SwiperSlide>
+      {tvShows.map((tvShow: TvShow) => (
+        <SwiperSlide key={tvShow.id} className='max-w-[25rem]'>
+          <TvShowItem {...tvShow} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   )
 }

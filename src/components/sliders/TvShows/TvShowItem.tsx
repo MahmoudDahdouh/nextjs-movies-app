@@ -1,14 +1,26 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaStar, FaStarHalfAlt } from 'react-icons/fa'
+import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa'
 
-const TvShowItem = () => {
+const TvShowItem = ({
+  backdrop_path,
+  name,
+  vote_average = 0,
+  vote_count,
+}: TvShow) => {
+  const rateFromFive = Math.round(vote_average) / 2
+  let restStars =
+    5 - Math.floor(rateFromFive) - (rateFromFive % 1 !== 0 ? 1 : 0)
   return (
     <Link href='/movies/1' className='max-w-xs'>
       <div className='slider-item '>
         <div className='img w-full overflow-hidden rounded-lg'>
           <Image
-            src='/temp-cover.webp'
+            src={
+              backdrop_path
+                ? `https://image.tmdb.org/t/p/w500${backdrop_path}`
+                : '/temp-cover.webp'
+            }
             alt='Picture of the film cover'
             height={1000}
             width={1000}
@@ -19,17 +31,24 @@ const TvShowItem = () => {
             className='object-cover hover:scale-110 transition-all duration-300 ease-in-out'
           />
         </div>
-        <h2 className='text-base mt-2'>John Wick: Chapter 4</h2>
+        <h2 className='text-base mt-2'>{name}</h2>
 
-        <div className='rating flex items-center gap-2'>
-          <div className='flex items-center gap-1'>
-            <FaStar className='text-emerald-500 h-4 w-4' />
-            <FaStar className='text-emerald-500 h-4 w-4' />
-            <FaStar className='text-emerald-500 h-4 w-4' />
-            <FaStarHalfAlt className='text-emerald-500 h-4 w-4' />
-            <FaStarHalfAlt className='text-emerald-500 h-4 w-4' />
+        {/* Rating */}
+        <div className='text-base text-gray-500 items-center'>
+          <div className='rating flex items-center gap-2'>
+            {[...Array(Math.floor(rateFromFive))].map((item, index) => {
+              return <FaStar className='text-emerald-500 h-4 w-4' key={index} />
+            })}
+            {rateFromFive % 1 !== 0 && (
+              <FaStarHalfAlt className='text-emerald-500 h-4 w-4' />
+            )}
+            {[...Array(Math.floor(restStars))].map((item, index) => {
+              return (
+                <FaRegStar className='text-emerald-500 h-4 w-4' key={index} />
+              )
+            })}
+            <p className='rating'>{(vote_average / 2).toFixed(1)}</p>
           </div>
-          <p className='text-xs text-gray-500'>5.6</p>
         </div>
       </div>
     </Link>
