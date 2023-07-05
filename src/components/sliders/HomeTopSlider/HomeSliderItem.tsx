@@ -7,7 +7,7 @@ const HomeSliderItem = ({
   vote_count,
   release_date,
   overview,
-  backdrop_path = '/temp-cover.webp',
+  backdrop_path,
 }: Movie) => {
   const rateFromFive = Math.round(vote_average) / 2
   let restStars =
@@ -19,7 +19,7 @@ const HomeSliderItem = ({
           <div className='container py-4 text-white grid grid-cols-2'>
             <div className='col-span-2 lg:col-span-1'>
               <h1 className='text-3xl '>{title}</h1>
-              <p className='text-gray-500'>{overview}</p>
+              <p className='text-gray-500 max-lines-3'>{overview}</p>
               {/* Rating */}
               <div className='text-base text-gray-500 items-center mt-2'>
                 <div className='rating flex items-center gap-2'>
@@ -49,7 +49,11 @@ const HomeSliderItem = ({
       <div className='lg:col-span-1 col-span-2 order-1 relative '>
         <div className='gradient-cover w-full h-full absolute'></div>
         <Image
-          src={backdrop_path}
+          src={
+            backdrop_path
+              ? `https://image.tmdb.org/t/p/w500${backdrop_path}`
+              : '/temp-cover.webp'
+          }
           alt='Picture of the film cover'
           height={1000}
           width={1000}
