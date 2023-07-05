@@ -23,16 +23,16 @@ const page = () => {
         <p className='text-base text-gray-400'>1 item</p>
         <div className='search-results grid grid-cols-12 gap-4 mt-4'>
           <div className='col-span-4 md:col-span-3 xl:col-span-2'>
-            <MovieItem />
+            {/* <MovieItem /> */}
           </div>
           <div className='col-span-4 md:col-span-3 xl:col-span-2'>
-            <MovieItem />
+            {/* <MovieItem /> */}
           </div>
           <div className='col-span-4 md:col-span-3 xl:col-span-2'>
-            <MovieItem />
+            {/* <MovieItem /> */}
           </div>
           <div className='col-span-4 md:col-span-3 xl:col-span-2'>
-            <MovieItem />
+            {/* <MovieItem /> */}
           </div>
         </div>
       </section>

@@ -28,7 +28,7 @@ const page = () => {
   ]
   return (
     <>
-      <HomeTopSlider movies={sliderData} />
+      {/* <HomeTopSlider ={sliderData} /> */}
 
       {/* Popular movies */}
       <section className='popular-movies  mt-12'>
@@ -37,9 +37,7 @@ const page = () => {
             <h2 className='text-2xl'>Popular Movies</h2>
             <LinkButton href='/movies'>View all</LinkButton>
           </div>
-          <div className='movies-slider mt-4 flex'>
-            <MovieSlider />
-          </div>
+          <div className='movies-slider mt-4 flex'>{/* <MovieSlider /> */}</div>
         </div>
       </section>
       {/* Top Rated Movies */}
@@ -49,9 +47,7 @@ const page = () => {
             <h2 className='text-2xl'>Top Rated Movies</h2>
             <LinkButton href='/movies'>View all</LinkButton>
           </div>
-          <div className='movies-slider mt-4 flex'>
-            <MovieSlider />
-          </div>
+          <div className='movies-slider mt-4 flex'>{/* <MovieSlider /> */}</div>
         </div>
       </section>
       {/* Upcoming Movies */}
@@ -61,9 +57,7 @@ const page = () => {
             <h2 className='text-2xl'>Upcoming Movies</h2>
             <LinkButton href='/movies'>View all</LinkButton>
           </div>
-          <div className='movies-slider mt-4 flex'>
-            <MovieSlider />
-          </div>
+          <div className='movies-slider mt-4 flex'>{/* <MovieSlider /> */}</div>
         </div>
       </section>
     </>

@@ -28,7 +28,7 @@ const page = () => {
   ]
   return (
     <>
-      <HomeTopSlider movies={sliderData} />
+      {/* <HomeTopSlider movies={sliderData} /> */}
       {/* Popular TV Shows */}
       <section className='popular-tv-shows  mt-12'>
         <div className='container'>
@@ -37,7 +37,7 @@ const page = () => {
             <LinkButton href='/tv-shows'>View all</LinkButton>
           </div>
           <div className='movies-slider mt-4 flex'>
-            <TvShowsSlider />
+            {/* <TvShowsSlider /> */}
           </div>
         </div>
       </section>
@@ -49,7 +49,7 @@ const page = () => {
             <LinkButton href='/tv-shows'>View all</LinkButton>
           </div>
           <div className='movies-slider mt-4 flex'>
-            <TvShowsSlider />
+            {/* <TvShowsSlider /> */}
           </div>
         </div>
       </section>
