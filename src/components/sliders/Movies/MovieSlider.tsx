@@ -1,26 +1,23 @@
 'use client'
 
-import Image from 'next/image'
-import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import MovieItem from './MovieItem'
+interface SliderProps {
+  movies: Movie[]
+}
 
-const MovieSlider = () => {
+const MovieSlider = ({ movies = [] }: SliderProps) => {
   return (
     <Swiper
       className='slider-width-auto slides-start'
       slidesPerView={'auto'}
       spaceBetween={16}
     >
-      <SwiperSlide className='max-w-[15rem]'>
-        <MovieItem />
-      </SwiperSlide>
-      <SwiperSlide className='max-w-[15rem]'>
-        <MovieItem />
-      </SwiperSlide>
-      <SwiperSlide className='max-w-[15rem]'>
-        <MovieItem />
-      </SwiperSlide>
+      {movies.map((movie: Movie) => (
+        <SwiperSlide key={movie.id} className='max-w-[15rem]'>
+          <MovieItem {...movie} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   )
 }
