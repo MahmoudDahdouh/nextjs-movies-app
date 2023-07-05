@@ -1,37 +1,15 @@
-// Import Swiper styles
+import axios from '@/api/axios'
 import LinkButton from '../components/buttons/LinkButton'
 import HomeTopSlider from '../components/sliders/HomeTopSlider/HomeTopSlider'
 import MovieSlider from '../components/sliders/Movies/MovieSlider'
 import TvShowsSlider from '../components/sliders/TvShows/TvShowsSlider'
 
-const sliderData = [
-  {
-    id: 1,
-    title: 'John Wick: Chapter 4',
-    overview:
-      'With the price on his head ever increasing, John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.',
-    vote_average: 8.1,
-    vote_count: 92123,
-    release_date: '2021-05-15',
-    duration: 120,
-  },
-  {
-    id: 1,
-    title: 'John Wick: Chapter 4',
-    overview:
-      'With the price on his head ever increasing, John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.',
-    vote_average: 6.6,
-    duration: 120,
-    vote_count: 1234,
+export default async function Home() {
+  const data: any = await getHomePageData()
 
-    release_date: '2021-05-15',
-  },
-]
-
-export default function Home() {
   return (
     <>
-      <HomeTopSlider movies={sliderData} />
+      <HomeTopSlider movies={data.discoverMovies.results} />
       {/* Popular movies */}
       <section className='popular-movies  mt-12'>
         <div className='container'>
@@ -40,22 +18,69 @@ export default function Home() {
             <LinkButton href='/movies'>View all</LinkButton>
           </div>
           <div className='movies-slider mt-4 flex'>
-            <MovieSlider />
+            <MovieSlider movies={data.popularMovies.results} />
           </div>
         </div>
       </section>
       {/* Popular TV Shows */}
-      <section className='popular-movies  mt-12'>
+      <section className='popular-tv-shows  mt-12'>
         <div className='container'>
           <div className='flex justify-between items-center font-bold'>
             <h2 className='text-2xl'>Popular TV Shows</h2>
             <LinkButton href='/tv-shows'>View all</LinkButton>
           </div>
           <div className='movies-slider mt-4 flex'>
-            <TvShowsSlider />
+            <TvShowsSlider tvShows={data.popularTvShows.results} />
           </div>
         </div>
       </section>
     </>
   )
+}
+
+const getHomePageData = async () => {
+  try {
+    // const data = res.data
+    let data = {
+      discoverMovies: {},
+      popularMovies: {},
+      popularTvShows: {},
+    }
+
+    // Discover movies
+    const asd = await Promise.all([
+      await axios
+        .get('/discover/movie?sort_by=popularity.desc&include_adult=false')
+        .then((res) => {
+          data.discoverMovies = res.data
+        })
+        .catch((error) => {
+          console.log('error', error)
+        }),
+
+      // Popular movies
+      await axios
+        .get('/movie/popular?include_adult=false')
+        .then((res) => {
+          data.popularMovies = res.data
+        })
+        .catch((error) => {
+          console.log('error', error)
+        }),
+      // popular tv shows
+      await axios
+        .get('/tv/popular?include_adult=false')
+        .then((res) => {
+          data.popularTvShows = res.data
+        })
+        .catch((error) => {
+          console.log('error', error)
+        }),
+    ])
+
+    return data
+  } catch (error) {
+    console.error('Error making parallel requests:', error)
+    return {}
+  }
 }
