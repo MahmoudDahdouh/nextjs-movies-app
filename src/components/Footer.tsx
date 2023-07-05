@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <footer className='bg-emerald-950 text-white '>
       <div className='container py-12'>
-        <Link href='/' className=' flex items-center gap-2 text-4xl'>
+        <Link href='/' className=' flex items-center gap-2 text-4xl max-w-fit'>
           <Logo />
         </Link>
         {/* Technologies */}
