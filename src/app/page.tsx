@@ -1,4 +1,4 @@
-import axios from '@/api/axios'
+import axios from '../api/axios'
 import LinkButton from '../components/buttons/LinkButton'
 import HomeTopSlider from '../components/sliders/HomeTopSlider/HomeTopSlider'
 import MovieSlider from '../components/sliders/Movies/MovieSlider'

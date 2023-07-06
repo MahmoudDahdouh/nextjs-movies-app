@@ -1,4 +1,4 @@
-import LinkButton from '@/components/buttons/LinkButton'
+import LinkButton from '../../components/buttons/LinkButton'
 
 const page = () => {
   return (

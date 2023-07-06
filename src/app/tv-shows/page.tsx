@@ -1,6 +1,4 @@
-import LinkButton from '@/components/buttons/LinkButton'
-import HomeTopSlider from '@/components/sliders/HomeTopSlider/HomeTopSlider'
-import TvShowsSlider from '@/components/sliders/TvShows/TvShowsSlider'
+import LinkButton from '../../components/buttons/LinkButton'
 
 const page = () => {
   return (

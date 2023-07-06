@@ -1,4 +1,3 @@
-import MovieItem from '@/components/sliders/Movies/MovieItem'
 import { FaSearch } from 'react-icons/fa'
 
 const page = () => {
