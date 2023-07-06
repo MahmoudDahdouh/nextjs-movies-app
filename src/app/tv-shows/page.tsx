@@ -3,29 +3,6 @@ import HomeTopSlider from '@/components/sliders/HomeTopSlider/HomeTopSlider'
 import TvShowsSlider from '@/components/sliders/TvShows/TvShowsSlider'
 
 const page = () => {
-  const sliderData = [
-    {
-      id: 1,
-      title: 'John Wick: Chapter 4',
-      overview:
-        'With the price on his head ever increasing, John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.',
-      vote_average: 8.1,
-      vote_count: 92123,
-      release_date: '2021-05-15',
-      duration: 120,
-    },
-    {
-      id: 1,
-      title: 'John Wick: Chapter 4',
-      overview:
-        'With the price on his head ever increasing, John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.',
-      vote_average: 6.6,
-      duration: 120,
-      vote_count: 1234,
-
-      release_date: '2021-05-15',
-    },
-  ]
   return (
     <>
       {/* <HomeTopSlider movies={sliderData} /> */}
