@@ -5,6 +5,7 @@ const page = () => {
     <>
       {/* <HomeTopSlider ={sliderData} /> */}
 
+      {/* test */}
       {/* Popular movies */}
       <section className='popular-movies  mt-12'>
         <div className='container'>
