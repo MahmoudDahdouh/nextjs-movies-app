@@ -1,6 +1,6 @@
 import axios from '../api/axios'
 import LinkButton from '../components/buttons/LinkButton'
-import HomeTopSlider from '../components/sliders/HomeTopSlider/HomeTopSlider'
+import TopSlider from '../components/sliders/TopSlider/TopSlider'
 import MovieSlider from '../components/sliders/Movies/MovieSlider'
 import TvShowsSlider from '../components/sliders/TvShows/TvShowsSlider'
 
@@ -9,7 +9,7 @@ export default async function Home() {
 
   return (
     <>
-      <HomeTopSlider movies={data.discoverMovies.results} />
+      <TopSlider movies={data.discoverMovies.results} />
       {/* Popular movies */}
       <section className='popular-movies  mt-12'>
         <div className='container'>

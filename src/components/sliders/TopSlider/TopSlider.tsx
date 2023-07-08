@@ -1,13 +1,13 @@
 'use client'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SliderItem from './HomeSliderItem'
+import SliderItem from './SliderItem'
 
 interface SliderProps {
   movies: Movie[]
 }
 
-const HomeTopSlider = ({ movies = [] }: SliderProps) => {
+const TopSlider = ({ movies = [] }: SliderProps) => {
   return (
     <>
       <Swiper slidesPerView={1}>
@@ -21,4 +21,4 @@ const HomeTopSlider = ({ movies = [] }: SliderProps) => {
   )
 }
 
-export default HomeTopSlider
+export default TopSlider
