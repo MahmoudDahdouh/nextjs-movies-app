@@ -51,7 +51,7 @@ const HomeSliderItem = ({
         <Image
           src={
             backdrop_path
-              ? `https://image.tmdb.org/t/p/w500${backdrop_path}`
+              ? `https://image.tmdb.org/t/p/original${backdrop_path}`
               : '/temp-cover.webp'
           }
           alt='Picture of the film cover'
