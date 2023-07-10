@@ -26,10 +26,10 @@ const BottomNav = () => {
           active={currentPath === '/'}
         />
         <BottomNavItem
-          href='/movies'
+          href='/movie'
           title='Movies'
           icon={<HiOutlineFilm />}
-          active={currentPath.includes('movies')}
+          active={currentPath.includes('movie')}
           activeIcon={<HiFilm />}
         />
         <BottomNavItem

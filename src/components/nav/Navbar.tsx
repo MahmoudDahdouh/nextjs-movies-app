@@ -22,9 +22,9 @@ const Navbar = () => {
         <ul className='nav-links hidden text-base justify-between items-center gap-4 md:flex'>
           <NavItem href='/' title='Home' active={currentPath === '/'} />
           <NavItem
-            href='/movies'
+            href='/movie'
             title='Movies'
-            active={currentPath.includes('movies')}
+            active={currentPath.includes('movie')}
           />
           <NavItem
             href='/tv-shows'
@@ -44,10 +44,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
-/*
-  /
-  /movies
-  /tv-shows
-  /search
-*/
