@@ -16,7 +16,7 @@ export default async function page() {
         <div className='container'>
           <div className='flex justify-between items-center font-bold'>
             <h2 className='text-2xl'>Popular Movies</h2>
-            <LinkButton href='/movies'>View all</LinkButton>
+            <LinkButton href='/movie/category/popular'>View all</LinkButton>
           </div>
           <div className='movies-slider mt-4 flex'>
             <MovieSlider movies={data.popularMovies.results} />
@@ -28,7 +28,7 @@ export default async function page() {
         <div className='container'>
           <div className='flex justify-between items-center font-bold'>
             <h2 className='text-2xl'>Top Rated Movies</h2>
-            <LinkButton href='/movies'>View all</LinkButton>
+            <LinkButton href='/movie/category/top_rated'>View all</LinkButton>
           </div>
           <div className='movies-slider mt-4 flex'>
             <MovieSlider movies={data.topRatedMovies.results} />
@@ -40,7 +40,7 @@ export default async function page() {
         <div className='container'>
           <div className='flex justify-between items-center font-bold'>
             <h2 className='text-2xl'>Upcoming Movies</h2>
-            <LinkButton href='/movies'>View all</LinkButton>
+            <LinkButton href='/movie/category/upcoming'>View all</LinkButton>
           </div>
           <div className='movies-slider mt-4 flex'>
             <MovieSlider movies={data.upcomingMovies.results} />
