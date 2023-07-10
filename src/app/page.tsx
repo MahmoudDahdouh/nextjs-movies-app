@@ -15,7 +15,7 @@ export default async function Home() {
         <div className='container'>
           <div className='flex justify-between items-center font-bold'>
             <h2 className='text-2xl'>Popular Movies</h2>
-            <LinkButton href='/movies'>View all</LinkButton>
+            <LinkButton href='/movie/category/popular'>View all</LinkButton>
           </div>
           <div className='movies-slider mt-4 flex'>
             <MovieSlider movies={data.popularMovies.results} />
@@ -27,7 +27,7 @@ export default async function Home() {
         <div className='container'>
           <div className='flex justify-between items-center font-bold'>
             <h2 className='text-2xl'>Popular TV Shows</h2>
-            <LinkButton href='/tv-shows'>View all</LinkButton>
+            <LinkButton href='/tv-shows/category/popular'>View all</LinkButton>
           </div>
           <div className='movies-slider mt-4 flex'>
             <TvShowsSlider tvShows={data.popularTvShows.results} />
