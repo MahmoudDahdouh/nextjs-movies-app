@@ -14,7 +14,7 @@ export default async function page() {
         <div className='container'>
           <div className='flex justify-between items-center font-bold'>
             <h2 className='text-2xl'>Popular TV Shows</h2>
-            <LinkButton href='/tv-shows'>View all</LinkButton>
+            <LinkButton href='/tv-shows/category/popular'>View all</LinkButton>
           </div>
           <div className='tv-shows-slider mt-4 flex'>
             <TvShowsSlider tvShows={data.popularTvShow.results} />
@@ -26,7 +26,9 @@ export default async function page() {
         <div className='container'>
           <div className='flex justify-between items-center font-bold'>
             <h2 className='text-2xl'>Top Rated TV Shows</h2>
-            <LinkButton href='/tv-shows'>View all</LinkButton>
+            <LinkButton href='/tv-shows/category/top_rated'>
+              View all
+            </LinkButton>
           </div>
           <div className='tv-shows-slider mt-4 flex'>
             <TvShowsSlider tvShows={data.topRatedTvShow.results} />
