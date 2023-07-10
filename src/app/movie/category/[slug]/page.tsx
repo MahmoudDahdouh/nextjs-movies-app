@@ -26,7 +26,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   )
 }
 
-export async function getData({ params }: { params: { slug: string } }) {
+async function getData({ params }: { params: { slug: string } }) {
   try {
     const title = params.slug
 
