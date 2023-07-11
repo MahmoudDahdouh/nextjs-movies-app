@@ -13,7 +13,7 @@ const TvShowItem = ({
   let restStars =
     5 - Math.floor(rateFromFive) - (rateFromFive % 1 !== 0 ? 1 : 0)
   return (
-    <Link href={`/tv/${id}`} className='max-w-xs'>
+    <Link href={`/tv-shows/${id}`}>
       <div className='slider-item '>
         <div className='img w-full overflow-hidden rounded-lg'>
           <Image

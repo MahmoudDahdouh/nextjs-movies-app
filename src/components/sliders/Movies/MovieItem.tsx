@@ -15,7 +15,7 @@ const MovieItem = ({
   let restStars =
     5 - Math.floor(rateFromFive) - (rateFromFive % 1 !== 0 ? 1 : 0)
   return (
-    <Link href={`/movie/${id}`} className='max-w-xs'>
+    <Link href={`/movie/${id}`}>
       <div className='slider-item '>
         <div className='img w-full overflow-hidden rounded-lg'>
           <Image
