@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa'
 
 const TvShowItem = ({
+  id,
   backdrop_path,
   name,
   vote_average = 0,
@@ -12,7 +13,7 @@ const TvShowItem = ({
   let restStars =
     5 - Math.floor(rateFromFive) - (rateFromFive % 1 !== 0 ? 1 : 0)
   return (
-    <Link href='/movies/1' className='max-w-xs'>
+    <Link href={`/tv/${id}`} className='max-w-xs'>
       <div className='slider-item '>
         <div className='img w-full overflow-hidden rounded-lg'>
           <Image
