@@ -1,7 +1,9 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { FaRegStar, FaStar, FaStarHalfAlt, FaStarOfDavid } from 'react-icons/fa'
 
 const HomeSliderItem = ({
+  id,
   title,
   vote_average = 0,
   vote_count,
@@ -13,7 +15,7 @@ const HomeSliderItem = ({
   let restStars =
     5 - Math.floor(rateFromFive) - (rateFromFive % 1 !== 0 ? 1 : 0)
   return (
-    <div className='grid grid-cols-2 relative'>
+    <Link href={`/movie/${id}`} className='grid grid-cols-2 relative'>
       <div className='lg:col-span-1 col-span-2 lg:order-1 order-2 bg-emerald-950 '>
         <div className='lg:absolute top-0 left-0 right-0 bottom-0 flex items-center'>
           <div className='container py-4 text-white grid grid-cols-2'>
@@ -64,7 +66,7 @@ const HomeSliderItem = ({
           className='object-cover'
         />
       </div>
-    </div>
+    </Link>
   )
 }
 
