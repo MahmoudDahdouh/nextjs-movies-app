@@ -33,20 +33,18 @@ export default async function page({ params }: { params: { id: string } }) {
       />
       <div className='container max-w-screen-lg'>
         <div className='grid grid-cols-12 gap-4 mt-6'>
-          <div className='col-span-4 overflow-hidden rounded-lg border  hidden md:block'>
-            <Image
-              src={'https://image.tmdb.org/t/p/w500' + data.poster_path}
-              alt='Picture of the film cover'
-              height={1000}
-              width={1000}
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
-              className='object-cover'
-            />
-          </div>
-          <div className='col-span-8'>
+          <Image
+            src={'https://image.tmdb.org/t/p/w500' + data.poster_path}
+            alt='Picture of the film cover'
+            height={1000}
+            width={1000}
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
+            className='object-cover col-span-4 hidden md:block rounded-lg'
+          />
+          <div className='col-span-12 md:col-span-8'>
             <h1 className='text-4xl mt-4'>{data.title}</h1>
             <p className='text-base mt-2'>{data.overview}</p>
             {/* rating with stars */}
@@ -75,7 +73,9 @@ export default async function page({ params }: { params: { id: string } }) {
                 </div>
                 <div className='flex items-center gap-2 mt-2'>
                   <h2 className='text-base font-bold'>Language</h2>
-                  <p className='text-base'>{data.original_language}</p>
+                  <p className='text-base uppercase'>
+                    {data.original_language}
+                  </p>
                 </div>
               </div>
               <div className='col-span-6'>
